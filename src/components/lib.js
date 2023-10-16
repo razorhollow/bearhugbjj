@@ -31,6 +31,10 @@ const buttonStyles = {
   `
 };
 
+const cardStyle = css`
+ border: 1px solid black;
+`
+
 export const Button = ({ variant = 'primary', children, ...props }) => {
   return (
     <button css={buttonStyles[variant]} {...props}>
@@ -38,3 +42,16 @@ export const Button = ({ variant = 'primary', children, ...props }) => {
     </button>
   );
 };
+
+export const Card = (props) => {  // added the style prop
+  return (
+    <div css={cardStyle}>
+      <div className="card-body">
+        <h5 className="card-title">Card title</h5>
+        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" className="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  )
+}
+

@@ -6,7 +6,7 @@ export const GlobalStyles = css`
   body {
     font-family: 'Roboto', sans-serif;  
     color: ${colors.text};
-    background-color: ${colors.mediumGray};
+    background-color: ${colors.darkGray};
     margin: 0;
     padding: 0;
     font-size: 16px;

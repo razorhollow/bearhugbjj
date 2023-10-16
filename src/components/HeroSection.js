@@ -4,9 +4,9 @@ import { css } from '@emotion/react';
 import { Button } from './lib';
 
 const heroContainer = css`
-  position: relative;  // This makes sure the child absolute positioning refers to this container
-  height: 60vh;       // Adjust as needed
-`;
+  position: relative;  
+  height: 60vh;
+  `      
 
 const backgroundStyle = css`
   position: absolute;
