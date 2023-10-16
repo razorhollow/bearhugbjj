@@ -1,5 +1,10 @@
 import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
+import { Helmet } from 'react-helmet'
+import { Global } from '@emotion/react'
+import { GlobalStyles } from '../styles/GlobalStyles'
+
+import Navbar from './NavBar'
 
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
@@ -12,20 +17,19 @@ const Layout = ({ pageTitle, children }) => {
     }
   `)
   return (
-    <div>
-      <header>{data.site.siteMetadata.title}</header>
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/blog">Blog</Link></li>
-        </ul>
-      </nav>
+    <>
+      <Helmet>
+      <link 
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" 
+        rel="stylesheet" 
+      />
+      </Helmet>
+      <Global styles={GlobalStyles} />
+      <Navbar />
       <main>
-        <h1>{pageTitle}</h1>
         {children}
       </main>
-    </div>
+    </>
   )
 }
 export default Layout

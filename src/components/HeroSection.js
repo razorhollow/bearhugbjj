@@ -1,0 +1,62 @@
+import { StaticImage } from 'gatsby-plugin-image';
+import * as React from 'react';
+import { css } from '@emotion/react';
+import { Button } from './lib';
+
+const heroContainer = css`
+  position: relative;  // This makes sure the child absolute positioning refers to this container
+  height: 60vh;       // Adjust as needed
+`;
+
+const backgroundStyle = css`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; // This places it below the content
+`;
+
+const contentStyle = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: white;  // Change as per your design
+  z-index: 1;    // This ensures the content stays on top
+`;
+
+const buttonGroup = css`
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 40vw;
+  margin-top: 4rem;
+`
+
+const HeroSection = () => {
+  return (
+    <div css={heroContainer}>
+      <StaticImage
+        src="https://static.wixstatic.com/media/2ae6e1_292251469a8745cf9a44251f8fb6ba76~mv2.png/v1/fill/w_1280,h_836,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/2ae6e1_292251469a8745cf9a44251f8fb6ba76~mv2.png"
+        alt="Background Image"
+        css={backgroundStyle}
+        layout="fullWidth"  // This ensures the image takes the full width of the container
+      />
+      <div css={contentStyle}>
+        {/* Logo Image - Replace with your image path */}
+        <StaticImage src="../images/logo.webp" alt="Bear Hug Logo" />
+        <div css={buttonGroup}>
+          {/* Phone Number and Training Schedule CTAs */}
+          <Button css={{'width': '400px', 'height': '80px'}}>Call Us Now</Button>
+          <Button variant='secondary' css={{'width': '400px', 'height': '80px'}}>See Our Schedule</Button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default HeroSection;
