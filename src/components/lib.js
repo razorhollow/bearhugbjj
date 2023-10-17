@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { css } from '@emotion/react';
 import colors from '../styles/colors';
+import { Link } from 'gatsby-link';
+import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { graphql, useStaticQuery } from 'gatsby';
 
 const buttonStyles = {
   primary: css`
@@ -31,8 +34,35 @@ const buttonStyles = {
   `
 };
 
+const learnMore = css`
+text-decoration: none;
+padding: 10px;
+  width: 100px;
+  color: ${colors.primaryYellow};
+  text-transform: uppercase;
+  &:hover {
+    background-color: ${colors.darkGray}
+  }
+`
+
 const cardStyle = css`
- border: 1px solid black;
+/* From https://css.glass */
+background: rgba(158, 158, 158, 0.4);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(158, 158, 158, 0.59);
+width: 30%;
+height: 650px;
+color: ${colors.lightGray};
+position: relative;
+overflow: hidden;
+`
+
+const cardImage = css`
+  width: 100%;
+  height: 350px;
 `
 
 export const Button = ({ variant = 'primary', children, ...props }) => {
@@ -43,15 +73,16 @@ export const Button = ({ variant = 'primary', children, ...props }) => {
   );
 };
 
-export const Card = (props) => {  // added the style prop
+export const Card = ({ title, text, image }) => {
   return (
     <div css={cardStyle}>
-      <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" className="btn btn-primary">Go somewhere</a>
+      <GatsbyImage image={image} alt={title} css={cardImage} imgStyle={{objectFit: 'cover', objectPosition: 'center'}}/>
+      <div css={{display: 'flex', flexDirection: 'column', padding: '20px'}}>
+        <h5 css={{fontSize: '1.8rem', margin: '0 auto', color: 'white'}}>{title}</h5>
+        <p css={{fontSize: '1.2rem'}}>{text}</p>
+        <Link to="/" css={learnMore}>learn more</Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
