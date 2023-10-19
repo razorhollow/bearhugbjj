@@ -9,8 +9,8 @@ import AboutSnippet from '../components/AboutSnippet'
 
 const backgroundImageStyle = css`
   position: absolute;
-  top: 15%;
-  left: 0;
+  top: 25%;
+  left: -3%;
   width: 100%;
   height: 100%;
   z-index: -1;
