@@ -5,7 +5,7 @@ import { Button } from './lib';
 
 const heroContainer = css`
   position: relative;  
-  height: 60vh;
+  min-height: 60vh;
   `      
 
 const backgroundStyle = css`
@@ -14,7 +14,7 @@ const backgroundStyle = css`
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; // This places it below the content
+  z-index: -1; 
 `;
 
 const contentStyle = css`
@@ -23,8 +23,9 @@ const contentStyle = css`
   justify-content: center;
   align-items: center;
   height: 100%;
-  color: white;  // Change as per your design
-  z-index: 1;    // This ensures the content stays on top
+  color: white;  
+  z-index: 1;    
+  padding: 2rem;
 `;
 
 const buttonGroup = css`
@@ -47,7 +48,6 @@ const HeroSection = () => {
         layout="fullWidth"  // This ensures the image takes the full width of the container
       />
       <div css={contentStyle}>
-        {/* Logo Image - Replace with your image path */}
         <StaticImage src="../images/logo.webp" alt="Bear Hug Logo" />
         <div css={buttonGroup}>
           {/* Phone Number and Training Schedule CTAs */}

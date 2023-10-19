@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet'
 import Navbar from './NavBar'
 import { Global } from '@emotion/react'
 import { GlobalStyles } from '../styles/GlobalStyles'
+import Footer from './Footer'
 
 
 const Layout = ({ pageTitle, children }) => {
@@ -29,6 +30,7 @@ const Layout = ({ pageTitle, children }) => {
       <main>
         {children}
       </main>
+      <Footer />
     </>
   )
 }

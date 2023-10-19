@@ -48,12 +48,11 @@ padding: 10px;
 
 const cardStyle = css`
 /* From https://css.glass */
-background: rgba(158, 158, 158, 0.4);
+background: rgba(158, 158, 158, 0.2);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(158, 158, 158, 0.59);
 width: 30%;
 min-height: 700px;
 color: ${colors.lightGray};

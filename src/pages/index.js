@@ -9,9 +9,21 @@ import AboutSnippet from '../components/AboutSnippet'
 
 const backgroundImageStyle = css`
   position: absolute;
-  top: 130vh; left: 20px;
-  z-index: -2;
+  top: 15%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
   filter: brightness(30%);
+`
+
+const cardBackgroundContainer = css`
+  position: relative;
+`
+
+const cardSectionStyle = css`
+  position: relative;
+  z-index: 1;
 `
 
 const index = () => {
@@ -21,8 +33,10 @@ const index = () => {
       <Layout pageTitle="Home Page">
         <HeroSection />
         <AboutSnippet />
-        <CardSection />
-        <StaticImage src="../images/bear.png" css={backgroundImageStyle} alt="grizzly bear"/>
+        <div css={cardBackgroundContainer}>
+          <CardSection css={cardSectionStyle}/>
+          <StaticImage src="../images/bear.png" css={backgroundImageStyle} alt="grizzly bear"/>
+        </div>
       </Layout>
   )
 }
