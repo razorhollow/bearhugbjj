@@ -40,6 +40,7 @@ padding: 10px;
   width: 100px;
   color: ${colors.primaryYellow};
   text-transform: uppercase;
+  border-radius: 10px;
   &:hover {
     background-color: ${colors.darkGray}
   }
@@ -54,7 +55,7 @@ backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
 border: 1px solid rgba(158, 158, 158, 0.59);
 width: 30%;
-height: 650px;
+min-height: 700px;
 color: ${colors.lightGray};
 position: relative;
 overflow: hidden;
