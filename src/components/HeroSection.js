@@ -2,6 +2,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import * as React from 'react';
 import { css } from '@emotion/react';
 import { Button } from './lib';
+import colors from '../styles/colors';
 
 const heroContainer = css`
   position: relative;  
@@ -38,6 +39,14 @@ const buttonGroup = css`
   margin-top: 4rem;
 `
 
+const buttonStyle = css`
+  width: 400px;
+  height: 80px;
+  &:hover {
+    box-shadow: 0px 0px 5px ${colors.primaryGreen};
+  }
+`
+
 const HeroSection = () => {
   return (
     <div css={heroContainer}>
@@ -51,8 +60,8 @@ const HeroSection = () => {
         <StaticImage src="../images/logo.webp" alt="Bear Hug Logo" />
         <div css={buttonGroup}>
           {/* Phone Number and Training Schedule CTAs */}
-          <Button css={{'width': '400px', 'height': '80px'}}>Call Us Now</Button>
-          <Button variant='secondary' css={{'width': '400px', 'height': '80px'}}>See Our Schedule</Button>
+          <Button css={buttonStyle}>Call Us Now</Button>
+          <Button variant='secondary' css={buttonStyle}>See Our Schedule</Button>
         </div>
       </div>
     </div>

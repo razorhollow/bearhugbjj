@@ -4,7 +4,6 @@ import colors from '../styles/colors'
 
 const aboutSnippetStyle = css`
   height: 20vh;
-  // background-color: ${colors.darkGray};
   display: flex;
   flex-direction: column;
   align-items: center;
