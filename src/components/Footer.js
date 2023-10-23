@@ -102,7 +102,7 @@ const AddressSection = () => {
 
 //copyright component
 
-const footer = () => {
+const Footer = () => {
   return (
       <div css={footerStyle}>
         <SiteIndex />
@@ -110,4 +110,4 @@ const footer = () => {
       </div>
   )
 }
-export default footer
+export default Footer

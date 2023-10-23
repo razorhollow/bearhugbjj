@@ -4,16 +4,17 @@ import colors from '../styles/colors'
 
 const aboutSnippetStyle = css`
   height: 20vh;
-  background-color: ${colors.darkGray};
+  // background-color: ${colors.darkGray};
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: ${colors.mediumGray};
+  color: ${colors.lightGray};
   font-size: 1.5rem;
   width: 100vw;
   padding: 1rem;
   min-height: 300px;
+
 `
 
 const AboutSnippet = () => {

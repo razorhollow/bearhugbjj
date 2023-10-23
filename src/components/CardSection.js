@@ -33,12 +33,9 @@ const CardSection = () => {
     }
   `);
 
-  console.log(data.allFile.edges)
-
   return (
     <div css={cardSectionStyle}>
       {cardContent.map(card => {
-        console.log(card.imgName)
         const edge = data.allFile.edges.find(
           edge => edge.node.relativePath === card.imgName
         );
