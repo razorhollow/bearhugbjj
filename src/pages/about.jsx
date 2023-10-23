@@ -41,6 +41,8 @@ const backgroundStyle = css`
   width: 100%;
   height: 100%;
   z-index: -1; 
+  filter: brightness(.6);
+  transform: scale(1.3);
 `;
 
 const AboutPage = () => {
