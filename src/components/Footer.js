@@ -31,21 +31,21 @@ const footerStyle = css`
 const logoStyle = css`
     width: 200px;
     height: auto;
-    filter: brightness(.3);
+    filter: brightness(.5);
     margin-bottom: 10px;
 `
 
 const indexItemsStyle = css`
     text-decoration: none;
     list-style-type: none;
-    color: ${colors.text};
+    color: ${colors.mediumGray};
     &:hover {
       color: white;
     }
 `
 
 const addressStyle = css`
-
+    color: ${colors.mediumGray};
 `
 
 const iconStyle = css`
@@ -66,7 +66,7 @@ const SiteIndex = () => {
         <Link to='/' css={indexItemsStyle}><li css={indexItemsStyle}>Contact</li></Link>
         <Link to='/' css={indexItemsStyle}><li css={indexItemsStyle}>Blog</li></Link>
       </nav>
-      <p css={{paddingTop: '10px'}}>&copy; {new Date().getFullYear()} Bearhug Jiujitsu | All Rights Reserved</p>
+      <p css={{paddingTop: '10px', color: `${colors.mediumGray}`}}>&copy; {new Date().getFullYear()} Bearhug Jiujitsu | All Rights Reserved</p>
     </div>
   )
 }
@@ -77,10 +77,10 @@ const SocialIcons = () => {
   return(
     <div css={{paddingTop: '10px'}}>
       <a href="https://www.facebook.com/yourprofile" target="_blank" rel="noopener noreferrer"  css={{paddingRight: '10px'}}>
-        <FontAwesomeIcon icon={['fab', 'facebook']} size="3x" color={colors.text}/>
+        <FontAwesomeIcon icon={['fab', 'facebook']} size="3x" color={colors.mediumGray}/>
       </a>
       <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={['fab', 'instagram']} size="3x" color={colors.text} />
+          <FontAwesomeIcon icon={['fab', 'instagram']} size="3x" color={colors.mediumGray} />
         </a>
     </div>
   )
