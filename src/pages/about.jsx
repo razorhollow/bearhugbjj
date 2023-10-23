@@ -1,17 +1,19 @@
 import * as React from 'react'
+import { StaticImage } from 'gatsby-plugin-image'
 import { css } from '@emotion/react'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import colors from '../styles/colors'
 
 const aboutStyle = css`
+z-index: 1;
   margin: 1rem auto;
   display: flex;
   flex-direction: column;
   align-items: space-around;
   padding: 20px;
-  width: 80vw;
-  background: rgba(158, 158, 158, 0.2);
+  width: 60vw;
+  background: rgba(13, 15, 14, 0.5);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
@@ -32,11 +34,21 @@ const aboutStyle = css`
   }
 `;
 
+const backgroundStyle = css`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+`;
+
 const AboutPage = () => {
 
 
   return (
     <Layout>
+      <StaticImage src="../images/roll.jpg" alt="bjj sparring" css={backgroundStyle} />
       <div css={aboutStyle}>
             <h1>Discover the Power of Brazilian Jiu-Jitsu</h1>
             <p>Dive into a combat sport that's taken the world by storm. BJJ's magic? Ground fighting and technique that let you outmaneuver even the toughest opponents. Born in Brazil, BJJ's heart now beats strong in the U.S., thanks to legends like the Gracie family.</p>

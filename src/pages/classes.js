@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { StaticImage } from 'gatsby-plugin-image'
 import { css } from '@emotion/react'
 import classSchedule from '../data/classSchedule'
 import Layout from '../components/layout'
@@ -13,7 +14,7 @@ align-items: space-around;
 padding: 20px;
 width: 280px;
 height: 400px;
-background: rgba(158, 158, 158, 0.2);
+background: rgba(13, 15, 14, 0.5);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(5px);
@@ -42,13 +43,22 @@ const scheduleSectionStyle = css`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  min-height: 80vh;
 `
 
-
+const backgroundStyle = css`
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+`;
 
 const Classes = () => {
   return (
     <Layout pageTitle="Class Schedule">
+      <StaticImage src="../images/armbar.png" alt="arm bar" css={backgroundStyle} />
       <div css={scheduleSectionStyle}>
       {Object.entries(classSchedule).map(([day, classes]) => (
         <div key={day} css={dayStyle}>
