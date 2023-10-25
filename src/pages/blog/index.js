@@ -14,7 +14,11 @@ const cardStyle = css`
   max-height: 400px; // adjust to desired height
   margin: 20px 0;
   border: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  background: rgba(13, 15, 14, 0.5);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); ;
 `;
 
 const imageStyle = css`
@@ -110,3 +114,4 @@ export const query = graphql`
 export const Head = () => <Seo title="News and Updates" />;
 
 export default BlogPage;
+
