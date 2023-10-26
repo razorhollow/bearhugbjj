@@ -1,8 +1,10 @@
 import { StaticImage } from 'gatsby-plugin-image';
+import { Link } from 'gatsby';
 import * as React from 'react';
 import { css } from '@emotion/react';
 import { Button } from './lib';
 import colors from '../styles/colors';
+import { small } from '../styles/media-queries';
 
 const heroContainer = css`
   position: relative;  
@@ -37,13 +39,16 @@ const buttonGroup = css`
   align-items: center;
   width: 40vw;
   margin-top: 4rem;
-`
-
-const buttonStyle = css`
+  `
+  
+  const buttonStyle = css`
   width: 400px;
   height: 80px;
   &:hover {
     box-shadow: 0px 0px 5px ${colors.primaryGreen};
+  }
+  ${small} {
+    width: 80vw;
   }
 `
 
@@ -60,8 +65,12 @@ const HeroSection = () => {
         <StaticImage src="../images/logo.webp" alt="Bear Hug Logo" />
         <div css={buttonGroup}>
           {/* Phone Number and Training Schedule CTAs */}
-          <Button css={buttonStyle}>Call Us Now</Button>
-          <Button variant='secondary' css={buttonStyle}>See Our Schedule</Button>
+          <a href="tel:6075429966" >
+            <Button css={buttonStyle}>Call Us Now</Button>
+          </a>
+          <Link to='/classes'>
+            <Button variant='secondary' css={buttonStyle}>See Our Schedule</Button>
+          </Link>
         </div>
       </div>
     </div>
