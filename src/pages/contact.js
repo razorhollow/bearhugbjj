@@ -5,6 +5,7 @@ import styled from '@emotion/styled'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import colors from '../styles/colors'
+import { large, medium, small } from '../styles/media-queries'
 import { encode } from '../../utils/markdownUtils'
 
 const formStyle = css`
@@ -25,8 +26,13 @@ const pageStyle = css`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50vw;
-  margin: 0 auto;
+  margin: 30px auto;
+  ${small} {
+    width: 100%;
+  }
+  ${large} {
+    width: 50vw;
+  }
 `
 
 const formHeadStyle = css`
