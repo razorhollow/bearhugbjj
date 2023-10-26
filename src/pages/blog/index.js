@@ -67,12 +67,13 @@ const BlogPage = ({ data }) => {
         return (
           <Link 
             to={`/blog/${node.frontmatter.slug}`}
+            key={node.id}
             css={{
               textDecoration: 'none',
               color: colors.lightGray
             }}
           >
-            <article key={node.id} css={cardStyle}>
+            <article css={cardStyle}>
                 <GatsbyImage image={image} alt={node.frontmatter.title} css={imageStyle} />
                 <h2 css={titleStyle}>{node.frontmatter.title}</h2>
                 <p css={excerptStyle}>{stripMarkdown(node.excerpt)}</p>

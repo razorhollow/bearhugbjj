@@ -25,12 +25,12 @@ h1, h2 {
   border-bottom: 2px solid ${colors.accent};
   padding-bottom: 10px;
   margin-bottom: 20px;
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
 li {
   color: ${colors.lightGray};
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.5;
   margin-bottom: 20px;
   list-style-type: none;
@@ -66,7 +66,7 @@ const Classes = () => {
           <ul css={{paddingRight: '2rem'}}>
             {classes.map((cls, index) => (
               <li key={index}>
-                {cls.time}  <span css={{fontSize: '1rem', margin: '0 1rem', color: `${colors.secondary}`}}>{cls.title}</span>
+                {cls.time}  <span css={{fontSize: '1.5rem', margin: '0 1rem', color: `${colors.secondary}`}}>{cls.title}</span>
               </li>
             ))}
           </ul>
