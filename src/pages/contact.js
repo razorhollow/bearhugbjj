@@ -12,7 +12,7 @@ const formStyle = css`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   padding: 20px;
   width: 60vw;
   background: rgba(13, 15, 14, 0.5);
@@ -20,6 +20,12 @@ const formStyle = css`
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
+  ${small} {
+    width: 90%;
+  }
+  ${large} {
+    width: 50vw;
+  }
 `
 
 const pageStyle = css`
@@ -27,25 +33,17 @@ const pageStyle = css`
   justify-content: center;
   align-items: center;
   margin: 30px auto;
-  ${small} {
-    width: 100%;
-  }
-  ${large} {
-    width: 50vw;
-  }
 `
 
 const formHeadStyle = css`
   color: ${colors.primaryGreen};
   align-self: start;
-  padding-left: 20px; 
   font-weight: 100;
 `
 
 const submitButtonStyle = css`
   width: 100px;
-  align-self: start;
-  margin-left: 25px;
+  margin-top: 10px;
   background-color: ${colors.primaryGreen};
   border: none;
   padding: 10px;
