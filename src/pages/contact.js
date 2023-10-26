@@ -5,6 +5,7 @@ import styled from '@emotion/styled'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import colors from '../styles/colors'
+import { encode } from '../../utils/markdownUtils'
 
 const formStyle = css`
   display: flex;
@@ -43,6 +44,10 @@ const submitButtonStyle = css`
   border: none;
   padding: 10px;
   color: ${colors.lightGray};
+  cursor: pointer;
+  &:hover {
+    color: ${colors.darkGray}
+  }
 `
 
 const Input = styled.input`
@@ -72,19 +77,62 @@ padding-top: 20px;
 }
 `
 
+
 const ContactForm = () => {
+  const [formData, setFormData] = React.useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  })
+
+  const [formStatus, setFormStatus] = React.useState('')
+
+  const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value })
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...formData })
+    })
+    .then(() => {
+      setFormStatus("Thanks for reaching out!")
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      })
+      setTimeout(() => {
+        setFormStatus("")
+      }, 4000)
+    })
+    .catch(error => setFormStatus("Something Went Wrong. Try Submitting Again!"))
+  }
+
   return (
     <Layout>
       <main css={pageStyle}>
-        <form action="submit" css={formStyle} name='contact' method='POST'>
+        <form css={formStyle} name='contact' method='POST' data-netlify='true' onSubmit={handleSubmit}>
+          <input type="hidden" name="form-name" value="contact" />
           <h1 css={formHeadStyle}>Get In Touch</h1>
-          <Input type="text" name="name" id="name" required placeholder='First Name'/>
-          <Input type="email" name="email" id="email" required placeholder="Email"/>
-          <Input type="tel" name="phone" id="phone" required placeholder="Phone"/>
+          <Input type="text" name="name" id="name" required placeholder='First Name' value={formData.name} onChange={handleChange}/>
+          <Input type="email" name="email" id="email" required placeholder="Email" value={formData.email} onChange={handleChange}/>
+          <Input type="tel" name="phone" id="phone" required placeholder="Phone" value={formData.phone} onChange={handleChange}/>
           <Message 
             placeholder="Want to schedule a free intro lesson? Need more info? We're here to help..."
+            name="message"
+            id="message"
+            value={formData.message}
+            onChange={handleChange}
             />
           <input type="submit" value="Submit" css={submitButtonStyle}/>
+          {formStatus && <p css={{color: `${colors.primaryBlue}`}}>{formStatus}</p>}
+
         </form>
       </main>
   </Layout>

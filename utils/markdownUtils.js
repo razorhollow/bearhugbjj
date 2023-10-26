@@ -11,3 +11,9 @@ export function stripMarkdown(markdown) {
     .replace(/\*([^*]+)\*/g, '$1'); // remove italic
   return stripped;
 }
+
+export function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
