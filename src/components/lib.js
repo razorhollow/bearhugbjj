@@ -2,8 +2,7 @@ import * as React from 'react';
 import { css } from '@emotion/react';
 import colors from '../styles/colors';
 import { Link } from 'gatsby-link';
-import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const buttonStyles = {
   primary: css`

@@ -137,7 +137,7 @@ const ContactForm = () => {
             onChange={handleChange}
             />
           <input type="submit" value="Submit" css={submitButtonStyle}/>
-          {formStatus && <p css={{color: `${colors.primaryBlue}`}}>{formStatus}</p>}
+          {formStatus && <p css={{color: `${colors.primaryGreen}`}}>{formStatus}</p>}
 
         </form>
       </main>

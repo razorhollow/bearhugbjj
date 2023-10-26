@@ -1,6 +1,6 @@
 // colors.js
 
-export default {
+const colors = {
   primary: '#009E49', // Green from Brazilian flag
   secondary: '#FFCC29', // Yellow from Brazilian flag
   background: '#F1F1F1', // Light Gray
@@ -21,3 +21,5 @@ export default {
   success: "#388E3C", // Success states
   info: "#1976D2" // Informational text
 };
+
+export default colors
