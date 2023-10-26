@@ -13,7 +13,7 @@ z-index: 1;
   align-items: space-around;
   padding: 20px;
   width: 60vw;
-  background: rgba(13, 15, 14, 0.5);
+  background: rgba(13, 15, 14, 0.8);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
