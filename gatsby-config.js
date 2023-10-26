@@ -5,12 +5,11 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-emotion", 
-    "gatsby-plugin-react-helmet", 
     "gatsby-plugin-image", 
     "gatsby-plugin-mdx", 
     "gatsby-plugin-sharp", 
     "gatsby-transformer-sharp",
-    "gatsby-plugin-netlify" 
+    "gatsby-plugin-netlify",
     {
       resolve: 'gatsby-source-filesystem',
       options: {

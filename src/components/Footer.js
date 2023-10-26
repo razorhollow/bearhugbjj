@@ -61,10 +61,10 @@ const SiteIndex = () => {
       <StaticImage src="../images/logo.webp" alt="Bear Hug Logo" css={logoStyle} />
       <nav css={indexItemsStyle}>
         <Link to='/' css={indexItemsStyle}><li css={indexItemsStyle}>Home</li></Link>
-        <Link to='/' css={indexItemsStyle}><li css={indexItemsStyle}>About</li></Link>
-        <Link to='/' css={indexItemsStyle}><li css={indexItemsStyle}>Classes</li></Link>
-        <Link to='/' css={indexItemsStyle}><li css={indexItemsStyle}>Contact</li></Link>
-        <Link to='/' css={indexItemsStyle}><li css={indexItemsStyle}>Blog</li></Link>
+        <Link to='/about' css={indexItemsStyle}><li css={indexItemsStyle}>About</li></Link>
+        <Link to='/classes' css={indexItemsStyle}><li css={indexItemsStyle}>Classes</li></Link>
+        <Link to='/contact' css={indexItemsStyle}><li css={indexItemsStyle}>Contact</li></Link>
+        <Link to='/blog' css={indexItemsStyle}><li css={indexItemsStyle}>Blog</li></Link>
       </nav>
       <p css={{paddingTop: '10px', color: `${colors.mediumGray}`}}>&copy; {new Date().getFullYear()} Bearhug Jiujitsu | All Rights Reserved</p>
     </div>
