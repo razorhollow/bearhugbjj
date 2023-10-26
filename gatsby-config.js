@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `BearhugSite`,
+    title: `BearhugBJJ`,
     siteUrl: `https://www.yourdomain.tld`
   },
   plugins: [
@@ -10,7 +10,6 @@ module.exports = {
     "gatsby-plugin-mdx", 
     "gatsby-plugin-sharp", 
     "gatsby-transformer-sharp", 
-    "gatsby-plugin-mdx",
     {
       resolve: 'gatsby-source-filesystem',
       options: {
