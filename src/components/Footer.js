@@ -73,18 +73,6 @@ const SiteIndex = () => {
 
 //social icons component
 
-const SocialIcons = () => {
-  return(
-    <div css={{paddingTop: '10px'}}>
-      <a href="https://www.facebook.com/yourprofile" target="_blank" rel="noopener noreferrer"  css={{paddingRight: '10px'}}>
-        <FontAwesomeIcon icon={['fab', 'facebook']} size="3x" color={colors.mediumGray}/>
-      </a>
-      <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={['fab', 'instagram']} size="3x" color={colors.mediumGray} />
-        </a>
-    </div>
-  )
-}
 
 //address component
 
@@ -95,7 +83,6 @@ const AddressSection = () => {
       <p><FontAwesomeIcon icon={faMapMarkerAlt} css={iconStyle} />100 Nasser Civic Center Plaza, Corning, NY 14830</p>
       <p><FontAwesomeIcon icon={faEnvelope} css={iconStyle} />info@bear-bjj.com</p>
       <p><FontAwesomeIcon icon={faPhone} css={iconStyle} />607-542-9966</p>
-      <SocialIcons />
     </div>
   )
 }
