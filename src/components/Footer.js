@@ -73,6 +73,18 @@ const SiteIndex = () => {
 
 //social icons component
 
+const SocialIcons = () => {
+  return(
+    <div css={{paddingTop: '10px'}}>
+      <a href="https://www.facebook.com/yourprofile" target="_blank" rel="noopener noreferrer"  css={{paddingRight: '10px'}}>
+        <FontAwesomeIcon icon={['fab', 'facebook']} size="3x" color={colors.mediumGray}/>
+      </a>
+      <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={['fab', 'instagram']} size="3x" color={colors.mediumGray} />
+        </a>
+    </div>
+  )
+}
 
 //address component
 
