@@ -3,12 +3,14 @@ import { css } from '@emotion/react';
 import { Card } from './lib';
 import { useStaticQuery, graphql } from 'gatsby';
 import cardContent from '../data/cardContent';
+import { small } from '../styles/media-queries';
 
 const cardSectionStyle = css`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
   margin: 3rem;
 `;
 

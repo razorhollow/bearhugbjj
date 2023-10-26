@@ -3,6 +3,7 @@ import { css } from '@emotion/react';
 import colors from '../styles/colors';
 import { Link } from 'gatsby-link';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import { small } from '../styles/media-queries';
 
 const buttonStyles = {
   primary: css`
@@ -34,8 +35,9 @@ const buttonStyles = {
 };
 
 const learnMore = css`
-text-decoration: none;
-padding: 10px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 10px;
   width: 100px;
   color: ${colors.primaryYellow};
   text-transform: uppercase;
@@ -57,6 +59,9 @@ min-height: 700px;
 color: ${colors.lightGray};
 position: relative;
 overflow: hidden;
+${small} {
+  width: 90%
+}
 `
 
 const cardImage = css`
